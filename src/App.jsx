@@ -110,6 +110,8 @@ const keywordIntentRules = [
   { unit: '价格费用词', terms: ['价格', '多少钱', '费用', '报价', '收费', '成本', '价钱', '预算'] },
   { unit: '下载安装词', terms: ['下载', '安装包', '安装', '怎么下', '如何下', '哪里下', '在哪下'] },
   { unit: '官网入口词', terms: ['官网', '官方网站', '登录', '入口', '网页版'] },
+  { unit: '工时管理词', terms: ['工时', '工时管理', '标准工时', '工时精细化', '工时效率'] },
+  { unit: '工作任务词', terms: ['工作任务', '多任务', '任务管理', '任务看板', '任务面板'] },
   { unit: '服务商词', terms: ['公司', '厂家', '服务商', '机构', '代理', '供应商', '哪家好'] },
   { unit: '产品系统词', terms: ['软件', '系统', '平台', '工具', 'saas', 'app', '应用'] },
   { unit: '咨询转化词', terms: ['咨询', '电话', '客服', '预约', '申请', '办理', '开户'] },
@@ -194,12 +196,15 @@ const keywordBrandRules = [
 
 const keywordPlanRules = [
   { plan: '品牌竞品词', terms: keywordBrandRules.flatMap((rule) => rule.terms) },
+  { plan: 'OKR管理词', terms: ['okr', 'kpi', '绩效目标', '目标管理'] },
+  { plan: '工时管理词', terms: ['工时', '标准工时', '工时精细化', '工时效率'] },
+  { plan: '工作任务管理词', terms: ['工作任务', '多任务管理', '任务管理', '任务看板', '任务面板'] },
   { plan: '移动办公词', terms: ['移动办公', '手机办公', 'm3办公', 'm3移动', '移动oa', '手机oa', '移动协同'] },
   { plan: 'OA办公词', terms: ['oa', '办公自动化', '协同办公', '协同oa', '办公系统', '办公软件', 'oa系统', 'oa软件'] },
   { plan: 'ERP企业管理词', terms: ['erp', '企业管理', '企业管理系统'] },
   { plan: '通用管理系统词', terms: ['管理系统', '管理平台'] },
   { plan: 'CRM客户管理词', terms: ['crm', '客户管理', '销售管理'] },
-  { plan: '项目管理词', terms: ['项目管理', '任务管理', 'okr', '工时'] },
+  { plan: '项目管理词', terms: ['项目管理', '项目看板', '项目协作'] },
   { plan: '流程审批词', terms: ['流程', '审批', '报销', '考勤', '请假'] },
   { plan: '文档知识词', terms: ['文档', '知识库', '知识管理', '网盘'] },
 ]
@@ -212,13 +217,21 @@ const keywordUnitCoreRules = [
   { label: '口碑对比', terms: ['排名', '排行', '推荐', '比较', '评测', '怎么样', '好不好', '哪家好'] },
   { label: '教程方法', terms: ['教程', '培训', '学习', '课程', '怎么', '如何', '方法'] },
   { label: '移动端', terms: ['移动', '手机', 'm3', 'app'] },
+  { label: 'OKR目标管理', terms: ['okr', '目标管理', '绩效目标'] },
+  { label: '工时管理', terms: ['工时', '标准工时', '工时精细化', '工时效率'] },
+  { label: '工作任务管理', terms: ['工作任务', '多任务管理', '任务管理', '任务看板', '任务面板'] },
   { label: '流程审批', terms: ['流程', '审批', '报销', '考勤', '请假'] },
-  { label: '项目任务', terms: ['项目', '任务', 'okr', '工时'] },
+  { label: '项目管理', terms: ['项目管理', '项目看板', '项目协作'] },
   { label: '客户销售', terms: ['客户', '销售', 'crm'] },
   { label: '文档知识', terms: ['文档', '知识', '网盘'] },
 ]
 
 const keywordScenarioRules = [
+  { label: '产品团队', terms: ['产品部', '产品经理', '产品研发', '产品运营', '产品团队'] },
+  { label: '研发团队', terms: ['研发', '技术部', '开发'] },
+  { label: '部门团队', terms: ['部门', '团队', '组织'] },
+  { label: '绩效考核', terms: ['绩效', '考核', 'kpi'] },
+  { label: '目标管理', terms: ['目标管理', '目标'] },
   { label: '下载', terms: ['下载', '安装包', '安装', '怎么下', '如何下', '哪里下', '在哪下'] },
   { label: '官网入口', terms: ['官网入口', '官网', '官方网站', '登录', '入口'] },
   { label: '网页版', terms: ['网页版', '网页端', 'web版', 'web端'] },
@@ -227,6 +240,12 @@ const keywordScenarioRules = [
 ]
 
 const keywordProductTypeRules = [
+  { label: 'OKR系统', terms: ['okr系统', 'okr软件', 'okr平台', 'okr工具', 'okr'] },
+  { label: '工时管理', terms: ['工时管理设计', '工时管理体系', '工时精细化管理', '工时效率管理', '标准工时管理', '工时管理', '工时'] },
+  { label: '开发任务管理', terms: ['开发团队任务管理', '开发任务管理'] },
+  { label: '工作任务管理', terms: ['工作多任务管理', '工作任务管理看板', '工作任务管理面板', '管理工作任务', '工作任务管理', '工作任务 管理'] },
+  { label: '任务管理', terms: ['好用的任务管理', '任务管理看板', '任务管理面板', '任务管理'] },
+  { label: '项目管理', terms: ['国内装修工程项目管理', '国内项目管理', '大型企业项目管理', '大项目管理看板', '产品项目管理', '项目管理'] },
   { label: 'OA管理系统', terms: ['oa管理系统', 'oa管理平台'] },
   { label: 'OA办公系统', terms: ['oa办公系统', 'oa办公平台'] },
   { label: 'OA系统', terms: ['oa系统', 'oa软件', 'oa平台'] },
@@ -257,6 +276,10 @@ const keywordSubjectStopWords = [
   '如何下',
   '哪里下',
   '在哪下',
+  'okr',
+  'kpi',
+  '目标管理',
+  '绩效目标',
   '集团',
   '有限公司',
   '有限责任公司',
@@ -339,7 +362,7 @@ function removeKeywordStopWords(keyword) {
 function detectKeywordIntent(keyword) {
   return (
     keywordIntentRules.find((rule) => rule.terms.some((term) => keyword.includes(term))) || {
-      unit: '通用核心词',
+      unit: '基础需求词',
       terms: [],
     }
   )
@@ -347,7 +370,7 @@ function detectKeywordIntent(keyword) {
 
 function detectSynonymLabel(keyword) {
   const group = keywordSynonymGroups.find((terms) => terms.some((term) => keyword.includes(term)))
-  if (!group) return '核心同义词'
+  if (!group) return '同类词'
   return `${group[0]}同义词`
 }
 
@@ -418,8 +441,11 @@ function detectKeywordUnitCore(keyword) {
   if (productType) {
     const scenario = detectKeywordScenario(keyword)
     const subject = extractKeywordSubject(keyword, productType)
-    const productLabel = scenario ? `${productType.label}${scenario.label}` : productType.label
-    return subject ? `${subject}-${productLabel}` : productLabel
+    if (productType.label.includes('OKR')) {
+      if (subject) return `${subject}-${productType.label}`
+      return scenario ? `${scenario.label}-${productType.label}` : productType.label
+    }
+    return subject ? `${subject}-${productType.label}` : productType.label
   }
 
   const unitRule = keywordUnitCoreRules.find((rule) => rule.terms.some((term) => keyword.includes(term)))
@@ -428,14 +454,29 @@ function detectKeywordUnitCore(keyword) {
   return compactKeywordCore(keyword, 6)
 }
 
+function buildKeywordUnitName(keyword, unitCore, intent) {
+  const base = unitCore || compactKeywordCore(keyword, 8)
+  const suffixMap = {
+    价格费用词: '价格',
+    下载安装词: '下载',
+    官网入口词: '官网',
+    服务商词: '服务商',
+    口碑对比词: '推荐',
+    教程培训词: '教程',
+  }
+  const suffix = suffixMap[intent.unit]
+  if (!suffix || base.endsWith(suffix)) return base
+  return `${base}${suffix}`
+}
+
 function classifyKeyword(keyword, index) {
   const normalized = normalizeKeyword(keyword)
   const intent = detectKeywordIntent(normalized)
   const synonymLabel = detectSynonymLabel(normalized)
   const plan = detectKeywordPlan(normalized)
   const unitCore = detectKeywordUnitCore(normalized)
-  const unit = `${unitCore}-${synonymLabel}-${intent.unit}`
-  const matchType = intent.unit === '通用核心词' ? '短语匹配' : '精确匹配'
+  const unit = buildKeywordUnitName(normalized, unitCore, intent)
+  const matchType = intent.unit === '基础需求词' ? '短语匹配' : '精确匹配'
 
   return {
     id: index + 1,
